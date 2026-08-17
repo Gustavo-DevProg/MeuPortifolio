@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.divPai {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #0b132b;
+  padding-top: 25vh;
+  padding-left: 6rem;
+  overflow: hidden;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Jockey One", sans-serif;
+    color: #ffffff;
+
+    .ola {
+      font-family: "Jersey 10", sans-serif;
+      font-size: 2.85rem;
+      color: #233a7f;
+    }
+
+    h1 {
+      font-size: 4.43rem;
+      line-height: 0.99;
+    }
+
+    .eng {
+      font-size: 2.44rem;
+      line-height: 0.99;
+    }
+  }
+  .botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 7rem;
+    width: 20rem;
+  }
+
+  .botoes button {
+    width: 100%;
+    height: 55px;
+    padding: 0.8rem 2rem 0.2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jomhuria", sans-serif;
+    font-size: 3.5rem;
+    line-height: 0;
+    color: #233a7f;
+    background-color: #0b132b;
+    border: 3px solid #233a7f;
+    border-radius: 10px;
+    opacity: 0.6;
+  }
+  button:hover {
+    opacity: 1;
+  }
+  .grade {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+  }
+  .foto {
+    position: absolute;
+    top: 50%;
+    right: 18rem;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 450px;
+  }
+  .foto img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .fundo {
+    z-index: 1;
+    transform: translateY(10px);
+  }
+  .selfie {
+    z-index: 2;
+    transform: scale(0.95);
+  }
+}
+.projetos {
+  background-color: #262626;
+  font-family: "Jersey 10", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  padding: 65px 20px;
+  color: #5aa9e6;
+  h2 {
+    color: #5aa9e6;
+    font-size: 61px;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  .cards {
+    gap: 50px 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 46px;
+    p {
+      color: white;
+      font-family: "Jockey One", sans-serif;
+      font-size: 25px;
+    }
+    .lang {
+      color: #8d8d8d;
+      font-size: 15px;
+      font-family: "Jockey One", sans-serif;
+      text-align: start;
+    }
+    .card {
+      padding: 25px;
+      background-color: #383838;
+      min-height: 396px;
+      width: 321px;
+      border-radius: 15px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      .circJava{
+        
+      }
+    }
+  }
+}
