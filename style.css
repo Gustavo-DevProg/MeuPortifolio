@@ -9,9 +9,12 @@
   min-height: 100vh;
   position: relative;
   background-color: #0b132b;
-  padding-top: 25vh;
-  padding-left: 6rem;
+  padding: 10vh 5rem 0vh 9rem;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 
   div {
     display: flex;
@@ -19,34 +22,39 @@
     align-items: flex-start;
     font-family: "Jockey One", sans-serif;
     color: #ffffff;
+    z-index: 2;
 
     .ola {
       font-family: "Jersey 10", sans-serif;
-      font-size: 2.85rem;
+      font-size: 50px;
       color: #233a7f;
     }
 
     h1 {
-      font-size: 4.43rem;
+      font-size: 78px;
       line-height: 0.99;
+      font-weight: 250;
     }
 
-    .eng {
+    .dev {
       font-size: 2.44rem;
       line-height: 0.99;
+      font-weight: 250;
     }
   }
+
   .botoes {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-top: 7rem;
+    margin-top: 9vh;
     width: 20rem;
   }
 
-  .botoes button {
+  .bot1, .bot2{
+    text-decoration: none;
     width: 100%;
-    height: 55px;
+    height: 75px;
     padding: 0.8rem 2rem 0.2rem 2rem;
     display: flex;
     justify-content: center;
@@ -58,25 +66,34 @@
     background-color: #0b132b;
     border: 3px solid #233a7f;
     border-radius: 10px;
-    opacity: 0.6;
+    opacity: 0.7;
   }
-  button:hover {
+
+  .bot1:hover {
     opacity: 1;
   }
+  .bot2:hover{
+    opacity:1;
+  }
+
   .grade {
     position: absolute;
     top: 0px;
     right: 0px;
     height: 100%;
   }
+
   .foto {
-    position: absolute;
-    top: 50%;
-    right: 18rem;
-    transform: translateY(-50%);
-    width: 450px;
-    height: 450px;
+    position: relative; /* Mudou de absolute para relative */
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 450px; /* Não ultrapassa 450px mas diminui se a tela diminuir */
+    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    z-index: 2;
   }
+
   .foto img {
     position: absolute;
     top: 0;
@@ -85,15 +102,18 @@
     height: 100%;
     object-fit: contain;
   }
+
   .fundo {
     z-index: 1;
     transform: translateY(10px);
   }
+
   .selfie {
     z-index: 2;
     transform: scale(0.95);
   }
 }
+
 .projetos {
   background-color: #262626;
   font-family: "Jersey 10", sans-serif;
@@ -101,12 +121,15 @@
   min-height: 100vh;
   padding: 65px 20px;
   color: #5aa9e6;
+
   h2 {
     color: #5aa9e6;
     font-size: 61px;
     text-align: center;
     margin-bottom: 45px;
+    font-weight: 350;
   }
+
   .cards {
     gap: 50px 60px;
     display: flex;
@@ -114,32 +137,277 @@
     flex-wrap: wrap;
     max-width: 1100px;
     margin: 0 auto;
-    font-size: 46px;
+    font-size: 40px;
+    line-height: 0.8;
+
+    h3 {
+      font-weight: 350;
+    }
+
     p {
       color: white;
       font-family: "Jockey One", sans-serif;
       font-size: 25px;
+      line-height: 1.2;
+      margin: auto 0;
     }
+
     .lang {
       color: #8d8d8d;
       font-size: 15px;
       font-family: "Jockey One", sans-serif;
       text-align: start;
     }
+
     .card {
-      padding: 25px;
+      padding: 33px 20px 5px 20px;
       background-color: #383838;
       min-height: 396px;
       width: 321px;
       border-radius: 15px;
       box-sizing: border-box;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       flex-direction: column;
       text-align: center;
-      .circJava{
-        
+
+      h3 {
+        margin-top: 0;
+      }
+
+      .final {
+        margin-top: auto;
+      }
+
+      .gith {
+        height: 40px;
+        width: 40px;
+        margin-top: 12px;
+      }
+
+      .java {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        margin-bottom: 4px;
+
+        .circJava {
+          height: 17px;
+          width: 17px;
+          background-color: #b07219;
+          border: 1.5px solid #bf9355;
+          border-radius: 50%;
+        }
+      }
+
+      .python {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        margin-bottom: 4px;
+
+        .circPython {
+          height: 17px;
+          width: 17px;
+          background-color: #3776ab;
+          border: 1.5px solid #5e87aa;
+          border-radius: 50%;
+        }
+      }
+
+      .front {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+
+        .html {
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          .circHtml {
+            height: 17px;
+            width: 17px;
+            background-color: #e34f26;
+            border: 1.5px solid #d97255;
+            border-radius: 50%;
+          }
+        }
+        .css {
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          .circCss {
+            height: 17px;
+            width: 17px;
+            background-color: #563d7c;
+            border: 1.5px solid #66587c;
+            border-radius: 50%;
+          }
+        }
+        .js {
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          .circJs {
+            height: 17px;
+            width: 17px;
+            background-color: #f1e05a;
+            border: 1.5px solid #efe38c;
+            border-radius: 50%;
+          }
+        }
       }
     }
+  }
+}
+.stacks {
+  background-color: #0b132b;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 61px;
+  width: 100%;
+  min-height: 38rem;
+  padding: 50px 20px;
+  color: #233a7f;
+  text-align: center;
+
+  h2 {
+    font-weight: 350;
+  }
+
+  .stack {
+    margin-bottom: 30px;
+  }
+
+  .blocos {
+    isolation: isolate;
+    gap: 40px 32px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+
+    .bloco {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      background-color: #0b132b;
+      border: 1.5px solid #5aa9e6;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      color: white;
+      font-family: "Jockey One", sans-serif;
+      font-size: 29px;
+      padding-top: 9px;
+    }
+
+    .bloco::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      width: 100%;
+      height: 100%;
+      border: 1.5px solid #5aa9e6;
+      border-radius: 16px;
+      background-color: transparent;
+      z-index: -1;
+    }
+
+    img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+}
+.contato {
+  display: flex;
+  background-color: #262626;
+  width: 100%;
+  min-height: 30rem;
+  text-align: center;
+  color: #979797;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 45px;
+  padding-top: 10vh;
+  flex-direction: column;
+  gap: 75px;
+
+  h2 {
+    font-weight: 350;
+    line-height: 0.4;
+  }
+
+  .bottons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 45px;
+    
+    
+    .button{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 25px;
+      background-color: #383838; /* Camada do Centro (Cinza Médio) */
+      color: #ffffff;
+      border-radius: 22px; /* Arredondamento proporcional */
+      text-decoration: none;
+      font-family: "Mona Sans", sans-serif;
+      font-size: 20px;
+      opacity: 0.8;
+
+      box-shadow: 
+        0 -3px 0 0 #484848,
+        0  3px 0 0 #303030;
+    }
+    
+    .button:hover {
+      opacity: 1;
+    }
+
+    img{
+      height: 35px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+  .caract{
+    padding-top: 50px;
+    overflow: hidden;
+    
+    hr{
+      background-color: #979797;
+    }
+    h4{
+      font-size: 50px;
+      font-weight: 350;
+      white-space: nowrap;
+    }
+  }
+  .creditos{
+    text-align: start;
+    margin-right: auto;
+    padding-top: 70px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 350;
   }
 }
