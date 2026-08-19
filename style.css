@@ -696,7 +696,7 @@ html {
 
   .projetos .cards .card {
     width: 100%;
-    max-width: 340px;
+    max-width: 200px;
   }
 
   .stacks h2 {
@@ -750,11 +750,13 @@ html {
     min-height: 38px;
   }
 
-  .divPai h1 {
-    font-size: 32px;
-  }
+  .divPai .h1 {
+      font-size: 32px;
+      line-height: 1.1;
+    }
 
   .divPai .dev {
+    margin-top: 15px;
     font-size: 1.15rem;
   }
 
@@ -769,6 +771,9 @@ html {
 
   .divPai .foto {
     max-width: 230px;
+    .selfie{
+      padding-top: 7px; 
+    }
   }
 
   .projetos {
@@ -787,7 +792,13 @@ html {
   .projetos .cards .card {
     width: 100%;
     min-width: 0;
-    padding: 25px 16px 5px 16px;
+    padding: 25px 10px 5px 10px;
+    p{
+      font-size: 20px;
+    }
+    .lang{
+      font-size: 13px;
+    }
   }
 
   .stacks h2 {
@@ -829,5 +840,6 @@ html {
 
   .contato .creditos {
     font-size: 18px;
+    margin-top: auto;
   }
 }
