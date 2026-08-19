@@ -304,7 +304,6 @@ html {
   }
 }
 
-/*Efeito de interação entre mouse e cards*/
 .projetos .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.8s ease;
   cursor: pointer; 
@@ -332,13 +331,11 @@ html {
   z-index: 9999;
 }
 
-/* Modal visível */
 .modal-overlay.ativo {
   opacity: 1;
   pointer-events: all;
 }
 
-/* Caixa do Modal (Surgimento Minimizado -> Efeito de Pop-up) */
 .modal-conteudo {
   background: #0b132b;
   border: 2px solid #233a7f;
@@ -348,19 +345,15 @@ html {
   max-width: 450px;
   color: #ffffff;
   position: relative;
-  
-  /* Inicia pequeno (scale 0.7) */
   transform: scale(0.7);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Quando ativo, cresce para o tamanho normal */
 .modal-overlay.ativo .modal-conteudo {
   transform: scale(1);
 }
 
-/* Botão Fechar (X) */
 .fechar-modal {
   position: absolute;
   top: 12px;
@@ -372,7 +365,6 @@ html {
   cursor: pointer;
 }
 
-/* Botão de Expandir para o GitHub */
 .btn-expandir {
   display: inline-block;
   margin-top: 1.5rem;
@@ -398,11 +390,8 @@ html {
   font-family: "Jersey 10", sans-serif;
   font-size: 61px;
   width: 100%;
-  min-height: 40rem; /* Garante altura total para centralizar na tela */
-  padding: 60px 20px;
+  min-height: 40rem;
   color: #233a7f;
-
-  /* Centralização perfeita de todo o conteúdo da seção */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,8 +433,6 @@ html {
     margin: 0 auto;
     perspective: 1000px;
     margin-bottom: 45px;
-
-    /* Compensação exata dos 6px da borda deslocada para alinhar com o título */
     padding-left: 6px;
     padding-top: 6px;
 
@@ -465,8 +452,6 @@ html {
       font-family: "Jockey One", sans-serif;
       font-size: 29px;
       padding-top: 9px;
-
-      /* Estado inicial para animação 3D */
       opacity: 0;
       transform: rotateY(180deg);
       transform-style: preserve-3d;
@@ -492,8 +477,6 @@ html {
       z-index: -1;
       transform: translateZ(-1px);
     }
-
-    /* Delays em cascata */
     .bloco:nth-child(1) { transition-delay: 0.1s; }
     .bloco:nth-child(2) { transition-delay: 0.25s; }
     .bloco:nth-child(3) { transition-delay: 0.4s; }
@@ -612,5 +595,239 @@ html {
   }
   100% {
     transform: translateX(-50%);
-    
+  }
+}
+
+/* Telas grandes/notebooks menores */
+@media (max-width: 1300px) {
+  .divPai {
+    padding: 10vh 12vw 0vh 5rem;
+  }
+}
+
+/* Tablets (paisagem) */
+@media (max-width: 1024px) {
+  .divPai {
+    padding: 12vh 8vw 6vh 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    min-height: auto;
+    padding-bottom: 8vh;
+  }
+
+  .divPai div {
+    align-items: center;
+  }
+
+  .divPai h1 {
+    font-size: 58px;
+  }
+
+  .divPai .dev {
+    font-size: 1.9rem;
+  }
+
+  .divPai .botoes {
+    align-items: center;
+    margin-top: 5vh;
+  }
+
+  .divPai .grade {
+    opacity: 0.5;
+  }
+
+  .projetos .cards .card {
+    width: 45%;
+    min-width: 260px;
+  }
+
+  .stacks {
+    min-height: auto;
+    padding: 60px 20px 70px;
+  }
+}
+
+/* Tablets (retrato)/celulares grandes */
+@media (max-width: 768px) {
+  .divPai {
+    padding: 10vh 6vw 6vh 6vw;
+    gap: 40px;
+  }
+
+  .divPai .ola {
+    font-size: 40px;
+    min-height: 48px;
+  }
+
+  .divPai h1 {
+    font-size: 44px;
+  }
+
+  .divPai .dev {
+    font-size: 1.5rem;
+  }
+
+  .divPai .botoes {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .divPai .bot1, .divPai .bot2 {
+    height: 62px;
+    font-size: 2.8rem;
+  }
+
+  .divPai .foto {
+    max-width: 300px;
+  }
+
+  .divPai .grade {
+    display: none;
+  }
+
+  .projetos h2 {
+    font-size: 48px;
+  }
+
+  .projetos .cards {
+    gap: 35px;
+  }
+
+  .projetos .cards .card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .stacks h2 {
+    font-size: 48px;
+  }
+
+  .stacks .blocos {
+    gap: 28px 20px;
+  }
+
+  .stacks .blocos .bloco {
+    width: 130px;
+    height: 130px;
+    font-size: 24px;
+  }
+
+  .stacks .blocos img {
+    height: 60px;
+  }
+
+  .contato {
+    font-size: 34px;
+    gap: 55px;
+  }
+
+  .contato .bottons {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .contato .caract h4.caracteristicas {
+    font-size: 40px;
+  }
+
+  .contato .creditos {
+    font-size: 22px;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .divPai {
+    padding: 8vh 6vw 5vh 6vw;
+  }
+
+  .divPai .ola {
+    font-size: 30px;
+    min-height: 38px;
+  }
+
+  .divPai h1 {
+    font-size: 32px;
+  }
+
+  .divPai .dev {
+    font-size: 1.15rem;
+  }
+
+  .divPai .botoes {
+    max-width: 100%;
+  }
+
+  .divPai .bot1, .divPai .bot2 {
+    height: 55px;
+    font-size: 2.2rem;
+  }
+
+  .divPai .foto {
+    max-width: 230px;
+  }
+
+  .projetos {
+    padding: 45px 15px;
+  }
+
+  .projetos h2 {
+    font-size: 38px;
+  }
+
+  .projetos .cards {
+    font-size: 32px;
+    gap: 25px;
+  }
+
+  .projetos .cards .card {
+    width: 100%;
+    min-width: 0;
+    padding: 25px 16px 5px 16px;
+  }
+
+  .stacks h2 {
+    font-size: 38px;
+  }
+
+  .stacks .blocos .bloco {
+    width: 105px;
+    height: 105px;
+    font-size: 19px;
+  }
+
+  .stacks .blocos img {
+    height: 48px;
+  }
+
+  .contato {
+    font-size: 26px;
+    gap: 45px;
+    padding-top: 8vh;
+  }
+
+  .contato .bottons {
+    gap: 14px;
+  }
+
+  .contato .bottons .button {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+
+  .contato .bottons img {
+    height: 26px;
+  }
+
+  .contato .caract h4.caracteristicas {
+    font-size: 26px;
+  }
+
+  .contato .creditos {
+    font-size: 18px;
+  }
 }
