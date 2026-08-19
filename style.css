@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +13,7 @@
   min-height: 100vh;
   position: relative;
   background-color: #0b132b;
-  padding: 10vh 5rem 0vh 9rem;
+  padding: 10vh 35vh 0vh 9rem;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -28,6 +32,15 @@
       font-family: "Jersey 10", sans-serif;
       font-size: 50px;
       color: #233a7f;
+
+      display: inline-block;
+      min-height: 60px; 
+      line-height: 1;
+
+      border-right: 3px solid #233a7f;
+      padding-right: 5px;
+      display: inline-block;
+      animation: piscarCursor 0.8s infinite;
     }
 
     h1 {
@@ -84,13 +97,13 @@
   }
 
   .foto {
-    position: relative; /* Mudou de absolute para relative */
+    position: relative;
     top: auto;
     right: auto;
     transform: none;
     width: 100%;
-    max-width: 450px; /* Não ultrapassa 450px mas diminui se a tela diminuir */
-    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
     z-index: 2;
   }
 
@@ -105,12 +118,23 @@
 
   .fundo {
     z-index: 1;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
 
   .selfie {
     z-index: 2;
     transform: scale(0.95);
+    }
+
+  .foto #estrelas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
   }
 }
 
@@ -121,6 +145,21 @@
   min-height: 100vh;
   padding: 65px 20px;
   color: #5aa9e6;
+
+  .revelar {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .revelar.ativo {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .cards .card:nth-child(1) { transition-delay: 0.1s; }
+  .cards .card:nth-child(2) { transition-delay: 0.25s; }
+  .cards .card:nth-child(3) { transition-delay: 0.4s; }
+  .cards .card:nth-child(4) { transition-delay: 0.55s; }
+  .cards .card:nth-child(5) { transition-delay: 0.7s; }
 
   h2 {
     color: #5aa9e6;
@@ -264,22 +303,133 @@
     }
   }
 }
+
+/*Efeito de interação entre mouse e cards*/
+.projetos .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.8s ease;
+  cursor: pointer; 
+}
+.projetos .card:hover {
+  transition-delay: 0s !important;
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* Modal visível */
+.modal-overlay.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Caixa do Modal (Surgimento Minimizado -> Efeito de Pop-up) */
+.modal-conteudo {
+  background: #0b132b;
+  border: 2px solid #233a7f;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 450px;
+  color: #ffffff;
+  position: relative;
+  
+  /* Inicia pequeno (scale 0.7) */
+  transform: scale(0.7);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Quando ativo, cresce para o tamanho normal */
+.modal-overlay.ativo .modal-conteudo {
+  transform: scale(1);
+}
+
+/* Botão Fechar (X) */
+.fechar-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Botão de Expandir para o GitHub */
+.btn-expandir {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #233a7f;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Jockey One", sans-serif;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-expandir:hover {
+  background-color: #3151b0;
+  transform: translateY(-2px);
+}
+
 .stacks {
+  position: relative;
+  overflow: hidden;
   background-color: #0b132b;
   font-family: "Jersey 10", sans-serif;
   font-size: 61px;
   width: 100%;
-  min-height: 38rem;
-  padding: 50px 20px;
+  min-height: 40rem; /* Garante altura total para centralizar na tela */
+  padding: 60px 20px;
   color: #233a7f;
-  text-align: center;
+
+  /* Centralização perfeita de todo o conteúdo da seção */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  #estrelasStacks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  h2, .blocos {
+    position: relative;
+    z-index: 1;
+  }
 
   h2 {
     font-weight: 350;
   }
 
   .stack {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    
   }
 
   .blocos {
@@ -290,7 +440,14 @@
     flex-wrap: wrap;
     font-size: 40px;
     max-width: 700px;
+    width: 100%;
     margin: 0 auto;
+    perspective: 1000px;
+    margin-bottom: 45px;
+
+    /* Compensação exata dos 6px da borda deslocada para alinhar com o título */
+    padding-left: 6px;
+    padding-top: 6px;
 
     .bloco {
       position: relative;
@@ -308,6 +465,18 @@
       font-family: "Jockey One", sans-serif;
       font-size: 29px;
       padding-top: 9px;
+
+      /* Estado inicial para animação 3D */
+      opacity: 0;
+      transform: rotateY(180deg);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease;
+    }
+
+    .bloco.virado {
+      opacity: 1;
+      transform: rotateY(0deg);
     }
 
     .bloco::before {
@@ -321,6 +490,20 @@
       border-radius: 16px;
       background-color: transparent;
       z-index: -1;
+      transform: translateZ(-1px);
+    }
+
+    /* Delays em cascata */
+    .bloco:nth-child(1) { transition-delay: 0.1s; }
+    .bloco:nth-child(2) { transition-delay: 0.25s; }
+    .bloco:nth-child(3) { transition-delay: 0.4s; }
+    .bloco:nth-child(4) { transition-delay: 0.55s; }
+    .bloco:nth-child(5) { transition-delay: 0.7s; }
+    .bloco:nth-child(6) { transition-delay: 0.85s; }
+
+    .bloco.virado:hover {
+      transition-delay: 0s !important;
+      transform: translateY(-6px) scale(1.05);
     }
 
     img {
@@ -334,12 +517,12 @@
   display: flex;
   background-color: #262626;
   width: 100%;
-  min-height: 30rem;
+  min-height: 100vh;
   text-align: center;
   color: #979797;
   font-family: "Jersey 10", sans-serif;
   font-size: 45px;
-  padding-top: 10vh;
+  padding-top: 12vh;
   flex-direction: column;
   gap: 75px;
 
@@ -388,26 +571,46 @@
     }
   }
   .caract{
-    padding-top: 50px;
-    overflow: hidden;
-    
+    padding-top: 10vh;
+    overflow: hidden;   
+    width: 100%;
+
     hr{
       background-color: #979797;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
-    h4{
-      font-size: 50px;
+    
+    h4.caracteristicas{
+      font-size: 55px;
       font-weight: 350;
       white-space: nowrap;
+      display: flex;
+      width: max-content;
+      animation: rolarTexto 25s linear infinite;
+      gap: 0px;
+      span{
+        display: inline-block;
+      }
     }
   }
   .creditos{
     text-align: start;
     margin-right: auto;
+    margin-top: auto;
     padding-top: 70px;
-    padding-left: 15px;
-    padding-bottom: 15px;
+    padding-left: 2vh;
+    padding-bottom: 2vh;
     font-family: "Inter", sans-serif;
     font-size: 30px;
     font-weight: 350;
   }
+}
+ @keyframes rolarTexto {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+    
 }

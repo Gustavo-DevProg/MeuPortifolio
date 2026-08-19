@@ -33,16 +33,17 @@
                     Desenvolvedor Full-Stack!
                 </p>
                 <div class="botoes">
-                    <a href="" class="bot1">
-                        CURRÍCULO
+                    <a href="pdf/curriculo.pdf" download="Currículo-Gustavo_Santos_de_Oliveira.pdf" class="bot1">
+                        DOWNLOAD CV
                     </a>
-                    <a href="" class="bot2">
+                    <a href="#contato" class="bot2">
                         FALE COMIGO!
                     </a>
                 </div>
             </div>
             <img class="grade" src="img/grade.png" alt="Grade triangular ao fundo">
             <div class="foto">
+                <canvas id="estrelas"></canvas>
                 <img class="fundo" src="img/fundo_selfie.png" alt="">
                 <img class="selfie" src="img/selfie.png" alt="Imagem do proprietário do portfólio">
             </div>
@@ -52,11 +53,11 @@
     <!--Seção projetos-->
     <section class="projetos" id="projetos">
         <div class="proj">
-            <h2>
+            <h2 class="revelar">
                 Projetos
             </h2>
             <div class="cards">
-                <div class="card">
+                <div class="card revelar">
                     <h3>
                         Sistema anti-fraude
                     </h3>
@@ -72,11 +73,11 @@
                             </h4>
                         </div>
                         <hr class="linhaCustomizada">
-                        <img class="gith" src="img/github.png" alt="Símbolo do GitHub">
+                        <img class="gith btn-github" data-repo="https://github.com/Gustavo-DevProg/Challenge_Back" src="img/github.png" alt="Símbolo do GitHub">
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card revelar">
                     <h3>
                         Lista de compras
                     </h3>
@@ -92,11 +93,11 @@
                             </h4>
                         </div>
                         <hr class="linhaCustomizada">
-                        <img class="gith" src="img/github.png" alt="Símbolo do GitHub">
+                        <img class="gith btn-github" data-repo="https://github.com/Gustavo-DevProg/projeto-eldorado" src="img/github.png" alt="Símbolo do GitHub">
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card revelar">
                     <h3>
                         Atividade de divisores
                     </h3>
@@ -112,11 +113,11 @@
                             </h4>
                         </div>
                         <hr class="linhaCustomizada">
-                        <img class="gith" src="img/github.png" alt="Símbolo do GitHub">
+                        <img class="gith btn-github" data-repo="https://github.com/Gustavo-DevProg/Atividade01_LaSalle" src="img/github.png" alt="Símbolo do GitHub">
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card revelar">
                     <h3>
                         Integração com a API do Gemini
                     </h3>
@@ -132,11 +133,11 @@
                             </h4>
                         </div>
                         <hr class="linhaCustomizada">
-                        <img class="gith" src="img/github.png" alt="Símbolo do GitHub">
+                        <img class="gith btn-github" data-repo="https://github.com/Gustavo-DevProg/gemini-api-java" src="img/github.png" alt="Símbolo do GitHub">
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card revelar">
                     <h3>
                         Portfólio
                     </h3>
@@ -166,7 +167,7 @@
                             </div>
                         </div>
                         <hr class="linhaCustomizada">
-                        <img class="gith" src="img/github.png" alt="Símbolo do GitHub">
+                        <img class="gith btn-github" data-repo="https://github.com/Gustavo-DevProg/MeuPortifolio" src="img/github.png" alt="Símbolo do GitHub">
                     </div>
                 </div>
             </div>
@@ -176,6 +177,7 @@
     <!--Seção stacks-->
     <section>
         <div class="stacks">
+            <canvas id="estrelasStacks"></canvas>
             <h2 class="stack">
                 Stacks
             </h2>
@@ -210,33 +212,36 @@
     </section>
 
     <!--Seção contatos-->
-    <section>
+    <section id="contato">
         <div class="contato">
             <h2>
                 VAMOS NOS CONECTAR?
             </h2>
             <div class="bottons">
-                <a href="#" class="button">
-                    <img src="img/github.png" alt="">
+                <a href="https://github.com/Gustavo-DevProg" target="_blank" rel="noopener noreferrer" class="button">
+                    <img src="img/github.png" alt="GitHub">
                     GitHub
                 </a>
-                <a href="#" class="button">
-                    <img src="img/linkedin.png" alt="">
+                <a href="https://www.linkedin.com/in/oliveirasgustavo/" target="_blank" rel="noopener noreferrer" class="button">
+                    <img src="img/linkedin.png" alt="LinkedIn">
                     LinkedIn
                 </a>
-                <a href="#" class="button">
-                    <img src="img/email.png" alt="">
-                    Email
-                </a>
-                <a href="#" class="button">
-                    <img src="img/instagram.png" alt="">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=03guoliveira@gmail.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="button"
+                    onclick="copiarEmail(event, '03guoliveira@gmail.com')">
+                        <img src="img/email.png" alt="Email">
+                        Email
+                    </a>
+                <a href="https://www.instagram.com/_gsoliver/" target="_blank" rel="noopener noreferrer" class="button">
+                    <img src="img/instagram.png" alt="Instagram">
                     Instagram
                 </a>
             </div>
             <div class="caract">
                 <hr class="linha">
-                <h4 class="caracteristicas">
-                    VIAJAR   •   FUTEBOL   •   CAFÉ   •   GRÊMIO   •   SOL   •   APRENDER   •   PRAIA   •   BATATA FRITA   •   ACâDEMIA   •   ESTUDAR   •   CERVEJA   •   AMIZADE
+                <h4 class="caracteristicas"><span>• VIAJAR • FUTEBOL • CAFÉ • GRÊMIO • SOL • APRENDER • PRAIA • BATATA FRITA • ACADÊMIA • ESTUDAR • CERVEJA • AMIZADE • BILHAR&nbsp;</span><span>• VIAJAR • FUTEBOL • CAFÉ • GRÊMIO • SOL • APRENDER • PRAIA • BATATA FRITA • ACADÊMIA • ESTUDAR • CERVEJA • AMIZADE • BILHAR&nbsp;</span>
                 </h4>
                 <hr class="linha">
             </div>
@@ -246,6 +251,20 @@
             </h4>
         </div>
     </section>
+
+    <div id="modalGithub" class="modal-overlay">
+        <div class="modal-conteudo">
+            <button class="fechar-modal">&times;</button>
+            <h3 id="modalTitulo">Nome do Projeto</h3>
+            <p id="modalDescricao">Detalhes e tecnologias do repositório.</p>
+            
+            <div class="modal-acoes">
+                <a id="btnExpandir" href="#" target="_blank" class="btn-expandir">
+                    Expandir / Abrir no GitHub ↗
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
