@@ -156,10 +156,10 @@ html {
     transform: translateY(0);
   }
   .cards .card:nth-child(1) { transition-delay: 0.1s; }
-  .cards .card:nth-child(2) { transition-delay: 0.25s; }
-  .cards .card:nth-child(3) { transition-delay: 0.4s; }
-  .cards .card:nth-child(4) { transition-delay: 0.55s; }
-  .cards .card:nth-child(5) { transition-delay: 0.7s; }
+  .cards .card:nth-child(2) { transition-delay: 0.20s; }
+  .cards .card:nth-child(3) { transition-delay: 0.30s; }
+  .cards .card:nth-child(4) { transition-delay: 0.30s; }
+  .cards .card:nth-child(5) { transition-delay: 0.40s; }
 
   h2 {
     color: #5aa9e6;
@@ -530,9 +530,9 @@ html {
       justify-content: center;
       gap: 10px;
       padding: 13px 25px;
-      background-color: #383838; /* Camada do Centro (Cinza Médio) */
+      background-color: #383838;
       color: #ffffff;
-      border-radius: 22px; /* Arredondamento proporcional */
+      border-radius: 22px;
       text-decoration: none;
       font-family: "Mona Sans", sans-serif;
       font-size: 20px;
@@ -570,7 +570,7 @@ html {
       white-space: nowrap;
       display: flex;
       width: max-content;
-      animation: rolarTexto 25s linear infinite;
+      animation: rolarTexto 28s linear infinite;
       gap: 0px;
       span{
         display: inline-block;
@@ -605,7 +605,7 @@ html {
   }
 }
 
-/* Tablets (paisagem) */
+/* Tablets */
 @media (max-width: 1024px) {
   .divPai {
     padding: 12vh 8vw 6vh 5vw;
@@ -742,7 +742,7 @@ html {
 /* Celulares */
 @media (max-width: 480px) {
   .divPai {
-    padding: 8vh 6vw 5vh 6vw;
+    padding: 8vh 6vw 10vh 6vw;
   }
 
   .divPai .ola {
@@ -777,7 +777,7 @@ html {
   }
 
   .projetos {
-    padding: 45px 15px;
+    padding: 45px 0px;
   }
 
   .projetos h2 {
@@ -785,20 +785,27 @@ html {
   }
 
   .projetos .cards {
-    font-size: 32px;
+    font-size: 25px;
     gap: 25px;
   }
 
   .projetos .cards .card {
-    width: 100%;
+    width: 40%;
     min-width: 0;
     padding: 25px 10px 5px 10px;
     p{
-      font-size: 20px;
+      font-size: 17px;
     }
     .lang{
       font-size: 13px;
-    }
+    }  
+  }
+  .projetos .cards .card .final .front{
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3px;
   }
 
   .stacks h2 {
@@ -826,8 +833,16 @@ html {
   }
 
   .contato .bottons .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 160px;
+    height: 48px;
     font-size: 15px;
     padding: 10px 16px;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .contato .bottons img {
